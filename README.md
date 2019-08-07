@@ -2,7 +2,7 @@
 Yet another implementation for shopping cart, really simple and easy to use.
 
 ## Installation
-* Add `gem "another_cart"` to Gemfile
+* Add `gem "kart"` to Gemfile
 * Run `bundle install`
 
 ## Usage
