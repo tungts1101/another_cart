@@ -12,4 +12,14 @@ example: `rails g cart Member Book` will create a cart contains books selected b
 * `rails db:migrate`
 these files created by this command are self-explanatory.
 * insert `selecting :product` to [User] and `selected_by :user` to [Product].
-* execute `show_cart` instance method to get current cart of user.
+
+## Export methods
+* `selecting_products`: list of products are selected by current user
+* `show_cart`: list of product id and quantity in cart of current user
+* `add_to_cart (Product)`: add 1 product to cart
+* `remove_from_cart (Product)`: remove 1 product from cart
+* `remove_all_from_cart (Product)`: remove all kind of this product from cart (when multiple was chosen)
+
+## Handling exception
+* **Kart::UserNotDefined**: insert `selected_by` into Product model
+* **Kart::ProductNotDefined**: insert `selecting` into User model 
