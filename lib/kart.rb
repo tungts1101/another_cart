@@ -34,18 +34,17 @@ module Kart
       define_method "remove_from_cart" do |product|
         item = Cart.find_by _user => self.id, _product => product.id
 
-        unless item.nil?
+        if item.nil?
+          raise Kart::ItemNotFound, "Item was not added to cart"
+        else
           item.quantity -= 1
-          item.save
+
+          (item.quantity == 0) ? item.destroy : item.save
         end
       end
 
-      define_method "remove_all_from_cart" do |product|
-        item = Cart.find_by _user => self.id, _product => product.id
-        
-        unless item.nil?
-          Cart.destroy item.id
-        end 
+      define_method "remove_all_from_cart" do
+        Cart.where(_user => self.id).destroy_all
       end
     end
 
