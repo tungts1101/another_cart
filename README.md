@@ -18,8 +18,9 @@ these files created by this command are self-explanatory.
 * `show_cart`: list of product id and quantity in cart of current user
 * `add_to_cart (Product)`: add 1 product to cart
 * `remove_from_cart (Product)`: remove 1 product from cart
-* `remove_all_from_cart (Product)`: remove all kind of this product from cart (when multiple was chosen)
+* `remove_all_from_cart`: remove all products from cart (when checking out successfully)
 
 ## Handling exception
 * **Kart::UserNotDefined**: insert `selected_by` into Product model
-* **Kart::ProductNotDefined**: insert `selecting` into User model 
+* **Kart::ProductNotDefined**: insert `selecting` into User model
+* **Kart::ItemNotFound**: item need to be added to cart before removed 
