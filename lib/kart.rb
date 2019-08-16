@@ -46,6 +46,17 @@ module Kart
       define_method "remove_all_from_cart" do
         Cart.where(_user => self.id).destroy_all
       end
+
+      define_method "add_multiple_to_cart" do |product, number|
+        item = Cart.find_by _user => self.id, _product => product.id
+
+        if item.nil?
+          Cart.new(_user => self.id, _product => product.id, :quantity => number).save
+        else
+          item.quantity += number
+          item.save
+        end
+      end
     end
 
     def self.selected_by user

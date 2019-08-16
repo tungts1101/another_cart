@@ -19,6 +19,7 @@ these files created by this command are self-explanatory.
 * `add_to_cart (Product)`: add 1 product to cart
 * `remove_from_cart (Product)`: remove 1 product from cart
 * `remove_all_from_cart`: remove all products from cart (when checking out successfully)
+* `add_multiple_to_cart (Product,number)`: add multiple products to cart
 
 ## Handling exception
 * **Kart::UserNotDefined**: insert `selected_by` into Product model
